@@ -1,0 +1,61 @@
+/* LoginPage Styles */
+
+/* Global container */
+div {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto; /* Centers the form vertically */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Heading Styles */
+  h2 {
+    text-align: center;
+    color: #0077ff;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form input fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    border-color: #0077ff;
+    outline: none;
+  }
+  
+  /* Button styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Error message styling */
+  p {
+    font-size: 14px;
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+    
