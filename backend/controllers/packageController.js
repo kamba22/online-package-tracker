@@ -23,6 +23,24 @@ exports.createPackage = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
+// Function to track a package
+exports.trackPackage = async (req, res) => {
+  try {
+      const trackingNumber = req.params.trackingNumber; // Get tracking number from URL params
+      const package = await Package.findOne({ trackingNumber }); // Find package by tracking number
+
+      if (!package) {
+          return res.status(404).json({ error: 'Package not found' }); // Package not found
+      }
+
+      // Respond with the package status
+      return res.json({ status: package.status });
+  } catch (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Server error' }); // In case of server error
+  }
+};
 // Example: packagesController.js
 /*const Package = require('../models/packageModel');
 

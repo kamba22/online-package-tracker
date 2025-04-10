@@ -1,108 +1,95 @@
-.user-page {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    box-sizing: border-box;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .package-info {
-    width:100%;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .package-info h3 {
-    
-    color: #333;
-  }
-  
-  .package-info p {
-    font-size: 18px;
-    color: #666;
-  }
-  
-  .status-tracker {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    width: 100%;
-  }
-  
-  .status-step {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 22%;
-  }
-  
-  .step-circle {
-    width: 30px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .status-step p {
-    color: #333;
-    font-size: 16px;
-  }
-  
-  .status-step.active .step-circle {
-    background-color: #4CAF50;
-  }
-  
-  .status-step:nth-child(2).active .step-circle {
-    background-color: #f57c00;
-  }
-  
-  .status-step:nth-child(3).active .step-circle {
-    background-color: #00bcd4;
-  }
-  
-  .status-step:nth-child(4).active .step-circle {
-    background-color: #ff5722;
-  }
+/* userpage.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f6f9;
+  margin: 0;
+  padding: 0;
+}
+
+.tracker-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 25px;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 16px;
+}
+
+.input-section button {
+  padding: 12px 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.input-section button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.status-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.circle.completed {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+.label {
+  font-size: 14px;
+  color: #333;
+}

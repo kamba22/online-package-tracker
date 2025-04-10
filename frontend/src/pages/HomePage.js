@@ -12,6 +12,8 @@ const Homepage = () => {
     const [trackingNumber, setTrackingNumber] = useState('');
     const [status, setStatus] = useState('');
     const [Package, setPackages] = useState([]);
+    //const [Package, setPackages] = useState([]);
+    const [selectedPackage, setSelectedPackage] = useState(null); 
     const [error, setError] = useState(null);
 
     // Handle the creation of a new package
@@ -61,36 +63,82 @@ const Homepage = () => {
         fetchPackages();
     }, []); // Empty dependency array, runs only once when the component mounts
 
+    const handleDeletePackage = async (trackingNumber) => {
+        try {
+            await axios.delete(`${requestURL}/${trackingNumber}`);
+            setPackages(Package.filter(pkg => pkg.trackingNumber !== trackingNumber)); // Remove package from list
+        } catch (err) {
+            console.error('Error deleting package:', err);
+            setError('Failed to delete package');
+        }
+    };
+
+    // Handle the update of a package
+    const handleUpdatePackage = async () => {
+        if (!selectedPackage || !status) {
+            alert('Please select a package to update and enter a new status.');
+            return;
+        }
+
+        try {
+            const updatedPackage = { ...selectedPackage, status };
+            const response = await axios.put(`${requestURL}/${selectedPackage.trackingNumber}`, updatedPackage);
+
+            const updatedPackages = Package.map(pkg =>
+                pkg.trackingNumber === selectedPackage.trackingNumber ? response.data : pkg
+            );
+            setPackages(updatedPackages);
+            setSelectedPackage(null);
+            setTrackingNumber('');
+            setStatus('');
+        } catch (err) {
+            console.error('Error updating package:', err);
+            setError('Failed to update package');
+        }
+    };
+
     return (
-        <div>
-            <h2>Homepage</h2>
-            {error && <p style={{ color: 'red' }}>{error}</p>} {/* Show error message if there's an error */}
-            <div>
+        <div className="homepage-container">
+            <h2>Package Tracker</h2>
+            {error && <p className="error-message">{error}</p>}
+            <div className="input-section">
                 <input
-                    type='text'
-                    placeholder='Tracking Number'
+                    type="text"
+                    placeholder="Tracking Number"
                     value={trackingNumber}
                     onChange={e => setTrackingNumber(e.target.value)}
+                    disabled={selectedPackage} // Disable when updating
                 />
                 <input
-                    type='text'
-                    placeholder='Status'
+                    type="text"
+                    placeholder="Status"
                     value={status}
                     onChange={e => setStatus(e.target.value)}
                 />
                 <button onClick={handleCreatePackage}>Create Package</button>
+                {selectedPackage && (
+                    <button onClick={handleUpdatePackage}>Update Package</button>
+                )}
             </div>
             <h3>Packages</h3>
             {Package.length > 0 ? (
                 <ul>
                     {Package.map(pkg => (
                         <li key={pkg.trackingNumber}>
-                            {pkg.trackingNumber} - {pkg.status}
+                            <div className="package-info">
+                                <span>{pkg.trackingNumber} - {pkg.status}</span>
+                                <button onClick={() => setSelectedPackage(pkg)} className="edit-btn">
+                                    Edit
+                                </button>
+                                <button onClick={() => handleDeletePackage(pkg.trackingNumber)} className="delete-btn">
+                                    Delete
+                                </button>
+                            </div>
                         </li>
                     ))}
                 </ul>
             ) : (
-                <p>No packages found.</p> // Show this if there are no packages
+                <p>No packages found.</p>
             )}
         </div>
     );

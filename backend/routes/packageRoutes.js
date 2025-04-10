@@ -3,7 +3,7 @@ const path = require('path');
 const router = express.Router();
 const Package = require('../models/package'); // Import the Package model
 const { createPackage } = require(path.join(__dirname, '..', 'controllers', 'packageController'));
-
+const { trackPackage } = require(path.join(__dirname, '..', 'controllers', 'packageController'));
 // Create a new package
 router.post('/api/Package', async (req, res) => {
     console.log('Received request at /api/Package', req.body); // Debugging
