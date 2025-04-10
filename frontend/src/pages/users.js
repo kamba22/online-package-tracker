@@ -49,10 +49,10 @@ const TrackPackage = () => {
       {currentStatus && (
         <div className="status-steps">
           {statusSteps.map((step, index) => {
-            const stepIndex = statusSteps.findindex(s=> s.toLowerCase() === currentStatus?.toLowerCase());
+            const stepIndex = statusSteps.findIndex(s=> s ===currentStatus);
             return (
-              <div key={index} className="step">
-                <div className={`circle ${index <= stepIndex ? "completed" : ""}`}>
+              <div key={index} className={`step ${index <= stepIndex ? "active" : ""}`}>
+                <div className={`circle ${index <= stepIndex ? "active" : ""}`}>
                   {index <= stepIndex ? "✔" : ""}
                 </div>
                 <div className="label">{step}</div>
