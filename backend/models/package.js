@@ -11,7 +11,7 @@ const PackageSchema = new mongoose.Schema({
   status: {
     type: String,
     required: true,
-    //enum: ['Packed', 'Sent', 'Delivered', 'Received'],
+    enum: ['Ordered', 'Shipped', 'In Transit', 'Delivered'],
   },
   updates: [
     {

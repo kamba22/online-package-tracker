@@ -14,6 +14,6 @@ export const createPackage= async(packageData) =>{
     return null;
   }
 }
-export default api;
+
 
   

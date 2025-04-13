@@ -41,11 +41,14 @@ router.get('/api/Package', async (req, res) => {
 // Get a specific package by tracking number
 router.get('/api/Package/:trackingNumber', async (req, res) => {
     try {
+        console.log("Incoming request for tracking number:", req.params.trackingNumber); 
         const package = await Package.findOne({ trackingNumber: req.params.trackingNumber });
         if (!package) {
             return res.status(404).json({ message: 'Package not found' });
         }
-        res.status(200).json(package);
+        //res.status(200).json(package);
+        res.status(200).json({ status: package.status });
+
     } catch (err) {
         res.status(500).json({ message: 'Error retrieving package', error: err });
     }
