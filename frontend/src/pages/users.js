@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/userpage.css';
 
+
 const TrackPackage = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
   const [currentStatus, setCurrentStatus] = useState(null);
@@ -37,6 +38,7 @@ const TrackPackage = () => {
   };
 
   return (
+    <div className="track">
     <section className="track-package-container">
       <h2>Track Your Package</h2>
       
@@ -69,6 +71,7 @@ const TrackPackage = () => {
         </div>
       )}
     </section>
+    </div>
   );
 };
 

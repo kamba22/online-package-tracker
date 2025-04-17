@@ -11,7 +11,7 @@ h2{
   margin-bottom: 20px;
 }
 /* Body styles */
-body {
+.track {
   font-family: 'Arial', sans-serif;
   background-color: #f0f8ff;
   display: flex;
@@ -19,6 +19,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background-image: url('../assets/userbanner.png')
 }
 
 /* Main container styling */

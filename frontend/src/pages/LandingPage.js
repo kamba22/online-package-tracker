@@ -1,53 +1,35 @@
+// src/pages/LandingPage.jsx
+// src/components/LandingPage.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/landingpage.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import heroimage from '../assets/heroimage.png'
+import '../styles/landingpage.css'; // Import the CSS for LandingPage
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
   const goToTracking = () => {
-    navigate('/track'); // adjust based on your route
+    navigate('/track');
   };
 
   return (
-    <div className="landing-page">
-      <header className="header">
-        <h1 className="logo">TrackEasy</h1>
-        <nav className="nav-links">
-          <a href="#about">About Us</a>
-          <a href="#gallery">Gallery</a>
-          <button onClick={goToTracking}>Track Your Package</button>
-        </nav>
-      </header>
-
-      <main className="main-full">
-        <section className="intro">
-          <h2>Welcome to TrackEasy</h2>
-          <p>Track your packages in real-time with speed and simplicity.</p>
-          <a href="/track" className="track-button">Start Tracking</a>
-        </section>
-
-        <section id="about" className="about">
-          <h2>About Us</h2>
-          <p>TrackEasy is a modern solution for package tracking, providing accurate and instant updates. Whether you’re a sender or a recipient, our system ensures transparency and peace of mind.</p>
-        </section>
-
-        <section id="gallery" className="gallery">
-          <h2>Gallery</h2>
-          <div className="gallery-images">
-            <img src="https://via.placeholder.com/300x200" alt="Gallery item 1" />
-            <img src="https://via.placeholder.com/300x200" alt="Gallery item 2" />
-            <img src="https://via.placeholder.com/300x200" alt="Gallery item 3" />
-          </div>
-        </section>
-      </main>
-
-      <footer className="footer">
-        <p>&copy; 2025 TrackEasy. All rights reserved.</p>
-      </footer>
+    <div className="landing-container">
+      <Navbar />
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1>Track Your Package Seamlessly</h1>
+          <p>Enter your tracking ID to know where your package is at any time.</p>
+          <button onClick={goToTracking}>Track Package</button>
+        </div>
+        <div className="hero-image">
+            <img src = {heroimage} alt="img" className="hero-image"/>
+        </div>
+      </section>
+      <Footer />
     </div>
   );
-}
-
+};
 
 export default LandingPage;

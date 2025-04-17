@@ -1,7 +1,7 @@
 /* LoginPage Styles */
 
 /* Global container */
-div {
+.login {
     width: 100%;
     max-width: 400px;
     margin: 100px auto; /* Centers the form vertically */

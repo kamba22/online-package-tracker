@@ -1,0 +1,44 @@
+/* src/styles/navbar.css */
+.navbar {
+    background-color: #1B1F3B;
+    color: white;
+    padding: 10 px 20px;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: visible;
+  }
+  
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    font-size: 18px;
+  }
+  
+  .nav-links a {
+    color: mintcream;
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+.MovinG {
+    width: 100px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+}  
+
+@keyframes float{
+0% { transform: translateY(0);}
+50% { transform: translateY(-10px);}
+100% { transform: translateY(0);}
+}
