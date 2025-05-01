@@ -1,7 +1,7 @@
 /* Global Styles */
 /*body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    background-color: beige;
     color: #333;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: beige;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -84,19 +84,19 @@ ul {
 }
 
 .edit-btn {
-    background-color: #f39c12;
+    background-color: blueviolet;
     color: white;
 }
 
 .delete-btn {
-    background-color: #e74c3c;
+    background-color:palevioletred;
     color: white;
 }
 
 .edit-btn:hover {
-    background-color: #e67e22;
+    background-color: navy;
 }
 
 .delete-btn:hover {
-    background-color: #c0392b;
+    background-color: rgb(20, 20, 49);
 }

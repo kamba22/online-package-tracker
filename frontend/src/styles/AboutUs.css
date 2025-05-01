@@ -1,0 +1,19 @@
+.about-page {
+    height: 100vh;
+    background-image: url("../assets/about.png"); /* Change to your Canva image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /*.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }*/
+  

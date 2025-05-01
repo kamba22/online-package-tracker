@@ -9,7 +9,7 @@ const TrackPackage = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const statusSteps = ['Packed', 'Shipped', 'In Transit', 'Delivered'];
+  const statusSteps = ['Ordered', 'Shipped', 'In Transit', 'Delivered'];
 
   const handleTrack = async () => {
     if (!trackingNumber) return;

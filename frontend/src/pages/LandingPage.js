@@ -15,6 +15,7 @@ const LandingPage = () => {
   };
 
   return (
+    <div className="landing">
     <div className="landing-container">
       <Navbar />
       <section className="hero-section">
@@ -28,6 +29,7 @@ const LandingPage = () => {
         </div>
       </section>
       <Footer />
+    </div>
     </div>
   );
 };

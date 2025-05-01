@@ -24,7 +24,7 @@ const LoginPage = () => {
     // Check if the credentials match
     if (email === mockCredentials.email && password === mockCredentials.password) {
       localStorage.setItem('token', 'mocked-token'); // Mock a JWT token for now
-      navigate('/home'); // Redirect to the homepage after successful login
+      navigate('/admin'); // Redirect to the adminpanel after successful login
     } else {
       setError('Invalid email or password');
     }
